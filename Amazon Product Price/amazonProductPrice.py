@@ -9,7 +9,9 @@ from selenium.webdriver.chrome.options import Options
 
 optionss = Options()
 optionss.add_experimental_option('excludeSwitches', ['enable-logging'])
-driver = webdriver.Chrome(executable_path='C:\est\chromedriver.exe', options=optionss)
+
+driver = webdriver.Chrome(executable_path='C:\est\chromedriver.exe', options=optionss) #Make sure to change the path of chromedriver.exe !!
+
 #Lists of needed data
 laptops=[]
 prices=[]
@@ -21,6 +23,7 @@ driver.get("https://www.amazon.com/s?k=laptop&sprefix=lap%2Caps%2C410&ref=nb_sb_
 content = driver.page_source
 soup = BeautifulSoup(content,features="html.parser")
 
+#Storing Products into lists
 for info in soup.findAll('div', attrs={'class':'a-section a-spacing-small a-spacing-top-small'}):
 
     pName = info.find('span', attrs={'class':'a-size-medium a-color-base a-text-normal'})
