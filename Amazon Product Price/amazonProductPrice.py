@@ -17,7 +17,7 @@ laptops=[]
 prices=[]
 rate=[]
 
-#Website requested..
+#Request the website ..
 driver.get("https://www.amazon.com/s?k=laptop&sprefix=lap%2Caps%2C410&ref=nb_sb_ss_retrain-deeppltr_1_3")
 
 content = driver.page_source
